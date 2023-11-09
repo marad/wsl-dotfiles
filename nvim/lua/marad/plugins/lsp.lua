@@ -85,7 +85,7 @@ return {
                 ["<leader>vr"] = "Refactor",
                 ["<leader>vrr"] = { function() vim.lsp.buf.references() end, "References", buffer = bufnr, noremap = true },
                 ["<leader>vrn"] = { function() vim.lsp.buf.rename() end, "Rename", buffer = bufnr, noremap = true },
-                ["<C-h>"] = { function() vim.lsp.buf.signature_help() end, "Signature", buffer = bufnr, noremap = true },
+                ["<C-?>"] = { function() vim.lsp.buf.signature_help() end, "Signature", buffer = bufnr, noremap = true },
             })
         end)
 
