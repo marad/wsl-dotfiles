@@ -30,3 +30,6 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
+-- Load project-local configurations
+vim.opt.exrc = true
+vim.opt_global.path = { ".", "lua/**", "pack/**/lua" }

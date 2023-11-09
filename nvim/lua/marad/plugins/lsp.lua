@@ -27,20 +27,47 @@ return {
             completion = {
                 completeopt = 'menu,menuone,noinsert'
             },
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
             mapping = cmp.mapping.preset.insert({
                 -- `Enter` key to confirm completion
                 ['<CR>'] = cmp.mapping.confirm({select = false}),
 
                 -- Ctrl+Space to trigger completion menu
-                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-e>'] = cmp.mapping.complete(),
 
                 -- Navigate between snippet placeholder
                 ['<C-f>'] = cmp_action.luasnip_jump_forward(),
                 ['<C-b>'] = cmp_action.luasnip_jump_backward(),
 
+                -- Navigate through completions
+                ['<C-j>'] = cmp.mapping.select_next_item(),
+                ['<C-k>'] = cmp.mapping.select_prev_item(),
+
                 -- Scroll up and down in the completion documentation
                 ['<C-u>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-d>'] = cmp.mapping.scroll_docs(4),
+            }),
+            sources = cmp.config.sources({
+                { name = "nvim_lsp" }
+            }),
+        })
+
+        cmp.setup.cmdline('/', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
+        })
+
+        cmp.setup.cmdline(':', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" }
+            }, {
+                { name = "cmdline" }
             })
         })
 
@@ -51,7 +78,7 @@ return {
                 ["<leader>v"] = "IDE Stuff",
                 ["<leader>vw"] = "Workspace",
                 ["<leader>vws"] = { function() vim.lsp.buf.workspace_symbol() end, "Symbols", buffer = bufnr, noremap = true },
-                ["<leader>vd"] = { function() vim.diagnostic.opten_float() end, "Toggle diagnostics", buffer = bufnr, noremap = true },
+                ["<leader>vd"] = { function() vim.diagnostic.open_float() end, "Toggle diagnostics", buffer = bufnr, noremap = true },
                 ["[d"] = { function() vim.diagnostic.goto_prev() end, "Previous diagnostic", buffer = bufnr, noremap = true },
                 ["]d"] = { function() vim.diagnostic.goto_next() end, "Next diagnostic", buffer = bufnr, noremap = true },
                 ["<leader>va"] = { function() vim.lsp.buf.code_action() end, "Code Actions", buffer = bufnr, noremap = true },
@@ -64,7 +91,9 @@ return {
 
         require('mason').setup()
         require('mason-lspconfig').setup({
-            ensure_installed = {},
+            ensure_installed = {
+                "lua_ls", "rust_analyzer", "powershell_es"
+            },
             handlers = {
                 lsp.default_setup,
             },
