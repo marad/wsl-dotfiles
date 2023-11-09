@@ -5,6 +5,7 @@
       pacman:
         name:
           - neovim
+          - tmux
           - fzf
           - rustup
           - eza
