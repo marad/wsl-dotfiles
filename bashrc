@@ -1,5 +1,4 @@
 
-
 # Configure https://github.com/marad/jumper
 jumpLocation() {
     if [ -z "$@" ]; then
@@ -11,5 +10,15 @@ jumpLocation() {
     fi
 }
 alias jg="jumpLocation"
+alias ls="eza"
+alias ll="eza -lah"
+alias grep="rg"
+alias cat="bat"
+alias pacman="sudo pacman"
 
 export PATH="$PATH:$HOME/.cargo/bin"
+
+if [ -f "~/.display" ]; then
+    source ~/.display
+fi
+
