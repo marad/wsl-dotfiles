@@ -22,3 +22,5 @@ if [ -f "~/.display" ]; then
     source ~/.display
 fi
 
+
+eval "$(starship init bash)"
