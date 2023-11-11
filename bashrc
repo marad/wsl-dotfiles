@@ -10,8 +10,8 @@ jumpLocation() {
     fi
 }
 alias jg="jumpLocation"
-alias ls="eza"
-alias ll="eza -lah"
+alias ls="eza --icons --git"
+alias ll="eza --icons --git -lah"
 alias grep="rg"
 alias cat="bat"
 alias pacman="sudo pacman"
