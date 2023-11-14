@@ -17,10 +17,13 @@ alias cat="bat"
 alias pacman="sudo pacman"
 
 export PATH="$PATH:$HOME/.cargo/bin"
+export RUSTC_WRAPPER=sccache
+export JAVA_HOME="/usr/lib/jvm/default"
 
 if [ -f "~/.display" ]; then
     source ~/.display
 fi
 
+#source ~/.bash_profile
 
 eval "$(starship init bash)"

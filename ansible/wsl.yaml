@@ -12,6 +12,7 @@
           - ripgrep
           - bat
           - starship
+          - sccache
         state: latest
         update_cache: yes
       become: true
