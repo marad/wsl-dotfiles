@@ -1,5 +1,5 @@
 format = '''
-$directory$git_branch$battery$memory_usage$package$time$cmd_duration
+\[Arch\] $directory$git_branch$battery$memory_usage$package$time$cmd_duration
 $character'''
 
 scan_timeout = 10
@@ -24,7 +24,6 @@ style = 'bold red'
 
 [git_branch]
 symbol = '🌱 '
-truncation_length = 4
 truncation_symbol = ''
 #ignore_branches = ['master', 'main']
 
