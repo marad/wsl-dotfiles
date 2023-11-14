@@ -16,6 +16,7 @@ alias grep="rg"
 alias cat="bat"
 alias pacman="sudo pacman"
 
+export LC_ALL="C.UTF-8"
 export PATH="$PATH:$HOME/.cargo/bin"
 export RUSTC_WRAPPER=sccache
 export JAVA_HOME="/usr/lib/jvm/default"
