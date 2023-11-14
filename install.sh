@@ -3,7 +3,7 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
-sudo pacman --noconfirm -Syu ansible
+sudo pacman --noconfirm --needed -Syu ansible
 
 ansible-playbook ansible/wsl.yaml
 

@@ -13,6 +13,8 @@
           - bat
           - starship
           - sccache
+          - unzip
+          - github-cli
         state: latest
         update_cache: yes
       become: true
