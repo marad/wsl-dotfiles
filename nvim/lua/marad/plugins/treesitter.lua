@@ -4,7 +4,8 @@ return {
 	config = function()
 		require('nvim-treesitter.configs').setup({
 			ensure_installed = {
-				"java", "kotlin", "rust", "c", "lua", "vim", "vimdoc", "query"
+				"java", "kotlin", "rust", "c", "lua", "vim", "vimdoc", "query",
+                "http", "json"
 			},
 			sync_install = true,
 			highlight = {
