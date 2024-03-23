@@ -1,5 +1,5 @@
 format = '''
-\[Arch\] $directory$git_branch$battery$memory_usage$package$time$cmd_duration
+\[Ubuntu\] $directory$git_branch$battery$memory_usage$package$time$cmd_duration
 $character'''
 
 scan_timeout = 10
