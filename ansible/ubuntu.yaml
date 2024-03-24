@@ -54,7 +54,16 @@
         #        cmd: cargo install jumper
         #        creates: ~/.cargo/bin/jumper
         #
+    - name: Make sure that apt neovim package is absent
+      become: true
+      apt:
+        name:
+          - neovim
+          - neovim-qt
+        state: absent
     - name: Install neovim
       become: true
-      ansible.builtin.script: ../scripts/install_nvim.sh
+      ansible.builtin.script:
+        cmd: ../scripts/install_nvim.sh
+        creates: /opt/nvim-linux64
 
