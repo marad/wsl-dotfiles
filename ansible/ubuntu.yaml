@@ -7,19 +7,6 @@
           - gh
           - rustup
           - ripgrep
-            #         - tmux
-            #         - fzf
-            #         - rustup
-            #         - eza
-            #         - ripgrep
-            #         - bat
-            #         - starship
-            #         - sccache
-            #         - unzip
-            #         - github-cli
-            #         - fontconfig
-            #         - ttf-jetbrains-mono-nerd
-
         state: present
         classic: true
       become: true
@@ -29,6 +16,7 @@
           - fzf
           - unzip
           - fontconfig
+          - libfontconfig-dev
           - build-essential
           - cmake
           - tree

@@ -17,7 +17,7 @@ alias cat="bat"
 
 export LC_ALL="C.UTF-8"
 export PATH="$PATH:$HOME/.cargo/bin:/opt/nvim-linux64/bin"
-export RUSTC_WRAPPER=sccache
+#export RUSTC_WRAPPER=sccache
 export JAVA_HOME="/usr/lib/jvm/default"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
