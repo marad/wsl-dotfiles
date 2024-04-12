@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>w", vim.cmd.write)
+--vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set("n", "<leader>pe", vim.cmd.Ex)
 
 -- Move highlithed lines with J/K

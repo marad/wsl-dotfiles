@@ -48,6 +48,14 @@
         name:
           - neovim
           - neovim-qt
+          - neovim-runtime
+        state: absent
+    - name: Make sure that snap neovim package is absent
+      become: true
+      snap:
+        name:
+          - nvim
+          - nvim-gtk
         state: absent
     - name: Install neovim
       become: true

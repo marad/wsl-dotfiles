@@ -1,11 +1,10 @@
 return {
    "rest-nvim/rest.nvim",
-   dependencies = { { "nvim-lua/plenary.nvim" } },
+   dependencies = { { "vhyrro/luarocks.nvim" }, { "nvim-neotest/nvim-nio" } },
+   ft = "http",
    config = function()
      require("rest-nvim").setup({
        --- Get the same options from Packer setup
-       result_split_horizontal = true,
-       result_split_in_place = true,
        encode_url = true,
     })
 

@@ -5,7 +5,7 @@ if [ -d "/opt/nvim-linux64" ]; then
     exit 0
 fi
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim-linux64
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
 rm nvim-linux64.tar.gz

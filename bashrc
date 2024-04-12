@@ -17,6 +17,7 @@ alias cat="bat"
 
 export LC_ALL="C.UTF-8"
 export PATH="$PATH:$HOME/.cargo/bin:/opt/nvim-linux64/bin"
+#export PATH="$HOME/bin:$PATH:$HOME/.cargo/bin:/opt/nvim-linux64/bin:/home/marad/.local/share/nvim/rocks/bin"
 #export RUSTC_WRAPPER=sccache
 export JAVA_HOME="/usr/lib/jvm/default"
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -31,3 +32,6 @@ eval "$(starship init bash)"
 
 # Created by `pipx` on 2024-03-21 19:27:30
 export PATH="$PATH:/home/marad/.local/bin"
+export EDITOR=nvim
+#export XDG_DATA_HOME="~/.local/share"
+#export XDG_CONFIG_HOME="~/.config"

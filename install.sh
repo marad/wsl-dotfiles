@@ -23,3 +23,6 @@ ln -s "$SCRIPT_DIR/gitconfig" ~/.gitconfig
 
 rm -rf ~/.tmux.conf
 ln -s "$SCRIPT_DIR/tmux.conf" ~/.tmux.conf
+
+rm -rf ~/bin
+ln -s "$SCRIPT_DIR/bin" ~/bin
