@@ -62,4 +62,12 @@
       ansible.builtin.script:
         cmd: ../scripts/install_nvim.sh
         creates: /opt/nvim-linux64
+    - name: Install sdkman
+      ansible.builtin.shell:
+        cmd: curl -s "https://get.sdkman.io" | bash
+        creates: ~/.sdkman 
+    - name: Install GraalVM 22
+      ansible.builtin.shell:
+        cmd: sdk install 22-graal
+        creates: ~/.sdkman/candidates/java/22-graal
 
