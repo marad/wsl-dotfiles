@@ -20,6 +20,7 @@ export LC_ALL="C.UTF-8"
 #export RUSTC_WRAPPER=sccache
 export CHI_HOME="$HOME/.chi"
 export JAVA_HOME="/usr/lib/jvm/default"
+export GRAALVM_HOME="/home/marad/.sdkman/candidates/java/22-graal"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export PATH="$CHI_HOME/bin:$HOME/.cargo/bin:/opt/nvim-linux64/bin:$PATH"
 
