@@ -93,7 +93,7 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 "lua_ls", "rust_analyzer", "powershell_es", "bashls",
-                "kotlin_language_server"
+                "kotlin_language_server", "marksman"
             },
             handlers = {
                 lsp.default_setup,

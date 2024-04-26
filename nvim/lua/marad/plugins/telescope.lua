@@ -17,6 +17,7 @@ return {
             ["<leader>ps"] = "Search files",
             ["<leader>t"] = "Telescope",
             ["<leader>tt"] = { "<cmd>Telescope<cr>", "Main telescope UI" },
+            ["<leader>tb"] = { "<cmd>Telescope buffers<cr>", "Switch buffers"},
         })
 
         opts.defaults = {

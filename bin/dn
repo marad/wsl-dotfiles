@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/vimwiki
+nvim -c ":lua require('marad.notes').open_daily_note()"
