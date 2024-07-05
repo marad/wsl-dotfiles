@@ -14,6 +14,8 @@ alias ls="eza --icons --git"
 alias ll="eza --icons --git -lah"
 alias grep="rg"
 alias cat="bat"
+alias iju="intellij-idea-ultimate"
+alias ijc="intellij-idea-community"
 
 export LC_ALL="C.UTF-8"
 #export PATH="$HOME/bin:$PATH:$HOME/.cargo/bin:/opt/nvim-linux64/bin:/home/marad/.local/share/nvim/rocks/bin"

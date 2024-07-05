@@ -44,18 +44,18 @@ end
 
 function Notes.next_daily_note()
     local bufname = get_opened_or_todays_daily_file()
-    local base, day_string = string.match(bufname, "^(.*%d+-%d+-)(%d+).md$")
-    local day = tonumber(day_string)
-    local tomorrow = base .. tostring(day + 1) .. ".md"
-    open_and_cwd(tomorrow)
+    local path, y, m, d = string.match(bufname, "^(.*)(%d+)-(%d+)-(%d+).md$")
+    local day_before = os.time { year = y, month = m, day = d } + (3600 * 24)
+    local file = path .. os.date("%Y-%m-%d", day_before) .. ".md"
+    open_and_cwd(file)
 end
 
 function Notes.previous_daily_note()
     local bufname = get_opened_or_todays_daily_file()
-    local base, day_string = string.match(bufname, "^(.*%d+-%d+-)(%d+).md$")
-    local day = tonumber(day_string)
-    local yesterday = base .. tostring(day - 1) .. ".md"
-    open_and_cwd(yesterday)
+    local path, y, m, d = string.match(bufname, "^(.*)(%d+)-(%d+)-(%d+).md$")
+    local day_before = os.time { year = y, month = m, day = d } - (3600 * 24)
+    local file = path .. os.date("%Y-%m-%d", day_before) .. ".md"
+    open_and_cwd(file)
 end
 
 function Notes.setup()

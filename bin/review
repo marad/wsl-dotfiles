@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# TMP=$(mktemp)
+
+TMP=/tmp/review.vim
+
+MON=$(date --date="last monday" "+%Y-%m-%d.md")
+TUE=$(date --date="last tuesday" "+%Y-%m-%d.md")
+WED=$(date --date="last wednesday" "+%Y-%m-%d.md")
+THU=$(date --date="last thursday" "+%Y-%m-%d.md")
+FRI=$(date --date="last friday" "+%Y-%m-%d.md")
+TODAY=$(date "+%d.%m.%Y")
+ENGDAY=$(date "+%a")
+DAYNAME=""
+
+REVIEW="Przegląd $TODAY.md"
+
+case $ENGDAY in
+    "Mon")
+        DAYNAME="Poniedziałek"
+        ;;
+    "Tue")
+        DAYNAME="Wtorek"
+        ;;
+    "Wed")
+        DAYNAME="Środa"
+        ;;
+    "Thu")
+        DAYNAME="Czwartek"
+        ;;
+    "Fri")
+        DAYNAME="Piątek"
+        ;;
+esac
+
+cd ~/notes
+
+if [ ! -f "$REVIEW" ]; then
+    cat review.tpl |\
+        sed -e "s/{DAY}/$DAYNAME/g" |\
+        sed -e "s/{DATE}/$TODAY/g" > "$REVIEW"
+fi
+
+echo "
+:cd ~/notes
+:e $REVIEW
+:vs $MON
+:sp $TUE
+:sp $WED
+:sp $THU
+:sp $FRI
+" > $TMP
+
+exec nvim -s $TMP
