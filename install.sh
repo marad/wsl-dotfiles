@@ -3,9 +3,9 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
-sudo pacman --noconfirm --needed -Syu ansible
+sudo apt install -y ansible 
 
-ansible-playbook ansible/wsl.yaml
+ansible-playbook ansible/ubuntu.yaml
 
 BASHRC="$SCRIPT_DIR/bashrc"
 
@@ -23,3 +23,6 @@ ln -s "$SCRIPT_DIR/gitconfig" ~/.gitconfig
 
 rm -rf ~/.tmux.conf
 ln -s "$SCRIPT_DIR/tmux.conf" ~/.tmux.conf
+
+rm -rf ~/bin
+ln -s "$SCRIPT_DIR/bin" ~/bin

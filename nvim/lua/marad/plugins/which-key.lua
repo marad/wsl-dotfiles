@@ -1,10 +1,14 @@
 return {
     'folke/which-key.nvim',
     event = "VeryLazy",
-    init = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 500
-    end,
+    dependencies = {
+        {'echasnovski/mini.icons'},
+        {'nvim-tree/nvim-web-devicons'},
+    },
+    --init = function()
+    --    vim.o.timeout = true
+    --    vim.o.timeoutlen = 500
+    --end,
     opts = {
         plugins = {
             marks = true,
@@ -19,19 +23,24 @@ return {
                 g = true,
             }
         },
-        motions = {
-            count = true
-        },
-        popup_mappings = {
+        keys = {
             scroll_down = "<c-d>",
             scroll_up = "<c-u>",
         },
-        window = {
+        win = {
             border = "none",
-            winblend = 20,
         },
         layout = {
             align = "left"
+        }
+    },
+    keys = {
+        {
+            "<leader>?",
+            function()
+                require("which-key").show({ global = false })
+            end,
+            desc = "Buffer Local Keymaps (which-key)",
         }
     }
 }

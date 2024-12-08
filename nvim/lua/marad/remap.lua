@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>w", vim.cmd.write)
+--vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set("n", "<leader>pe", vim.cmd.Ex)
 
 -- Move highlithed lines with J/K
@@ -43,15 +43,15 @@ vim.keymap.set("n", "<c-e>", ":e#<cr>")
 
 
 local wk = require('which-key')
-wk.register({
-    ["<leader>pe"] = "Explorer",
-    ["<leader>pw"] = "Save current file",
-    ["<leader>y"] = "Copy to system clipboard",
-    ["<leader>Y"] = "Copy current line to system clipboard",
+wk.add({
+    {"<leader>pe", desc = "Explorer"},
+    {"<leader>pw", desc = "Save current file"},
+    {"<leader>y", desc = "Copy to system clipboard"},
+    {"<leader>Y", desc = "Copy current line to system clipboard"},
 
     -- Navigate buffers
-    ["<leader>b"] = "Buffers",
-    ["<leader>bj"] = { "<cmd>:bp<cr>", "Switch to previous buffer" },
-    ["<leader>bk"] = { "<cmd>:bn<cr>", "Switch to next buffer" },
+    {"<leader>b", desc = "Buffers"},
+    {"<leader>bj", desc = { "<cmd>:bp<cr>", "Switch to previous buffer" }},
+    {"<leader>bk", desc = { "<cmd>:bn<cr>", "Switch to next buffer" }},
 })
 

@@ -1,0 +1,90 @@
+- name: Ubuntu WSL Configuration
+  hosts: localhost
+  tasks:
+    - name: Install required snap packages
+      snap:
+        name:
+          - gh
+          - rustup
+          - ripgrep
+        state: present
+        classic: true
+      become: true
+    - name: Install required apt packages
+      apt:
+        name:
+          - tmux
+          - xsel
+          - lua5.1
+          - luarocks
+          - fzf
+          - unzip
+          - fontconfig
+          - libfontconfig-dev
+          - build-essential
+          - cmake
+          - tree
+          - zip
+        state: latest
+      become: true
+    - name: Setup rustlang with rustup
+      ansible.builtin.shell:
+        cmd: rustup install stable
+    - name: Install starship
+      ansible.builtin.shell:
+        cmd: cargo install starship
+        creates: ~/.cargo/bin/starship
+    - name: Install eza
+      ansible.builtin.shell:
+        cmd: cargo install eza
+        creates: ~/.cargo/bin/eza
+    - name: Install bat
+      ansible.builtin.shell:
+        cmd: cargo install bat
+        creates: ~/.cargo/bin/bat
+        #    - name: Install jumper
+        #      ansible.builtin.shell:
+        #        cmd: cargo install jumper
+        #        creates: ~/.cargo/bin/jumper
+        #
+    - name: Make sure that apt neovim package is absent
+      become: true
+      apt:
+        name:
+          - neovim
+          - neovim-qt
+          - neovim-runtime
+        state: absent
+    - name: Make sure that snap neovim package is absent
+      become: true
+      snap:
+        name:
+          - nvim
+          - nvim-gtk
+        state: absent
+    - name: Install neovim
+      become: true
+      ansible.builtin.script:
+        cmd: ../scripts/install_nvim.sh
+        creates: /opt/nvim-linux64
+    - name: Install node version manager
+      ansible.builtin.shell:
+        cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        creates: ~/.nvm
+    - name: Install latest nodejs with NVM
+      ansible.builtin.shell:
+        cmd: nvm install node
+        creates: ~/.npm
+    - name: Install tldr command
+      ansible.builtin.shell:
+        cmd: npm install -g tldr
+
+    - name: Install sdkman
+      ansible.builtin.shell:
+        cmd: curl -s "https://get.sdkman.io" | bash
+        creates: ~/.sdkman 
+    #- name: Install GraalVM 22
+    #  ansible.builtin.shell:
+    #    cmd: sdk install 22-graal
+    #    creates: ~/.sdkman/candidates/java/22-graal
+

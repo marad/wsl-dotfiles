@@ -22,7 +22,7 @@
 [push]
     default = simple
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = input
     excludesfile = ~/.gitignore_global
 
@@ -34,3 +34,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main

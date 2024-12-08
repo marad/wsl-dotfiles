@@ -1,20 +1,19 @@
 return {
    "rest-nvim/rest.nvim",
-   dependencies = { { "nvim-lua/plenary.nvim" } },
+   dependencies = { { "vhyrro/luarocks.nvim" }, { "nvim-neotest/nvim-nio" } },
+   ft = "http",
    config = function()
      require("rest-nvim").setup({
        --- Get the same options from Packer setup
-       result_split_horizontal = true,
-       result_split_in_place = true,
        encode_url = true,
     })
 
     local wk = require('which-key')
-    wk.register({
-        ["<leader>r"] = "HTTP Requests",
-        ["<leader>rr"] = {"<Plug>RestNvim", "Run request under cursor"},
-        ["<leader>rp"] = {"<Plug>RestNvimPreview", "Preview CURL for request under cursor"},
-        ["<leader>rl"] = {"<Plug>RestNvimLast", "Run previos request"},
+    wk.add({
+        {"<leader>r", desc = "HTTP Requests"},
+        {"<leader>rr", "<Plug>RestNvim", desc = "Run request under cursor"},
+        {"<leader>rp", "<Plug>RestNvimPreview", desc = "Preview CURL for request under cursor"},
+        {"<leader>rl", "<Plug>RestNvimLast", desc = "Run previos request"},
     })
   end
 }

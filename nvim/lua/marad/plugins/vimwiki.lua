@@ -1,0 +1,38 @@
+--return {
+--    'vimwiki/vimwiki',
+--    lazy = false,
+--    init = function()
+--        vim.g.vimwiki_folding = 'custom'
+--        vim.g.vimwiki_global_ext = 0
+--        vim.g.vimwiki_list = {
+--            {
+--                path = "~/vimwiki",
+--                path_html = "~/mywiki",
+--                syntax = "markdown",
+--                ext = "md",
+--                auto_toc = 1,
+--                maxhi = 1,
+--
+--            }
+--        }
+--    end,
+--    config = function()
+--        local wk = require('which-key')
+--        wk.add({
+--            {"<leader>w", desc = "VimWiki"},
+--            {"<leader>wt", desc = "Manage tasks"},
+--            {"<leader>wtt", desc = {"<Plug>VimwikiToggleListItem", "Toggle list item"}},
+--            {"<leader>wtr", desc = {"<Plug>VimwikiToggleRejectedListItem", "Toggle rejected item"}},
+--            {"<leader>ws", desc = "Search"},
+--            {"<leader>wss", desc = {"<Plug>VimwikiSearch", "Search the wiki"}},
+--            {"<leader>wsb", desc = {"<Plug>VimwikiBacklinks", "Search backlinks"}},
+--            {"<leader>w<leader>", desc = "Diary"},
+--            {"<leader>w<leader>p", desc ={"<Plug>VimwikiDiaryPrevDay", "Previous day"}},
+--            {"<leader>w<leader>n", desc ={"<Plug>VimwikiDiaryNextDay", "Next day"}},
+--
+--        })
+--    end
+--
+--}
+--
+return {}

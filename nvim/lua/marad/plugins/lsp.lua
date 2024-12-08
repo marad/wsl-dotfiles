@@ -73,19 +73,19 @@ return {
 
         lsp.on_attach(function(_, bufnr)
             local wk = require('which-key')
-            wk.register({
-                ["gd"] = "Go to definition",
-                ["<leader>v"] = "IDE Stuff",
-                ["<leader>vw"] = "Workspace",
-                ["<leader>vws"] = { function() vim.lsp.buf.workspace_symbol() end, "Symbols", buffer = bufnr, noremap = true },
-                ["<leader>vd"] = { function() vim.diagnostic.open_float() end, "Toggle diagnostics", buffer = bufnr, noremap = true },
-                ["[d"] = { function() vim.diagnostic.goto_prev() end, "Previous diagnostic", buffer = bufnr, noremap = true },
-                ["]d"] = { function() vim.diagnostic.goto_next() end, "Next diagnostic", buffer = bufnr, noremap = true },
-                ["<leader>va"] = { function() vim.lsp.buf.code_action() end, "Code Actions", buffer = bufnr, noremap = true },
-                ["<leader>vr"] = "Refactor",
-                ["<leader>vrr"] = { function() vim.lsp.buf.references() end, "References", buffer = bufnr, noremap = true },
-                ["<leader>vrn"] = { function() vim.lsp.buf.rename() end, "Rename", buffer = bufnr, noremap = true },
-                ["<C-?>"] = { function() vim.lsp.buf.signature_help() end, "Signature", buffer = bufnr, noremap = true },
+            wk.add({
+                {"gd", desc = "Go to definition"},
+                {"<leader>v", desc = "IDE Stuff"},
+                {"<leader>vw", desc = "Workspace"},
+                {"<leader>vws", desc = { function() vim.lsp.buf.workspace_symbol() end, "Symbols", buffer = bufnr, noremap = true }},
+                {"<leader>vd", desc = { function() vim.diagnostic.open_float() end, "Toggle diagnostics", buffer = bufnr, noremap = true }},
+                {"[d", desc = { function() vim.diagnostic.goto_prev() end, "Previous diagnostic", buffer = bufnr, noremap = true }},
+                {"]d", desc = { function() vim.diagnostic.goto_next() end, "Next diagnostic", buffer = bufnr, noremap = true }},
+                {"<leader>va", desc = { function() vim.lsp.buf.code_action() end, "Code Actions", buffer = bufnr, noremap = true }},
+                {"<leader>vr", desc = "Refactor"},
+                {"<leader>vrr", desc = { function() vim.lsp.buf.references() end, "References", buffer = bufnr, noremap = true }},
+                {"<leader>vrn", desc = { function() vim.lsp.buf.rename() end, "Rename", buffer = bufnr, noremap = true }},
+                {"<C-?>", desc = { function() vim.lsp.buf.signature_help() end, "Signature", buffer = bufnr, noremap = true }},
             })
         end)
 
@@ -93,7 +93,7 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = {
                 "lua_ls", "rust_analyzer", "powershell_es", "bashls",
-                "kotlin_language_server"
+                "kotlin_language_server", "marksman"
             },
             handlers = {
                 lsp.default_setup,
