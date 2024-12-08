@@ -18,17 +18,17 @@
 --    end,
 --    config = function()
 --        local wk = require('which-key')
---        wk.register({
---            ["<leader>w"] = "VimWiki",
---            ["<leader>wt"] = "Manage tasks",
---            ["<leader>wtt"] = {"<Plug>VimwikiToggleListItem", "Toggle list item"},
---            ["<leader>wtr"] = {"<Plug>VimwikiToggleRejectedListItem", "Toggle rejected item"},
---            ["<leader>ws"] = "Search",
---            ["<leader>wss"] = {"<Plug>VimwikiSearch", "Search the wiki"},
---            ["<leader>wsb"] = {"<Plug>VimwikiBacklinks", "Search backlinks"},
---            ["<leader>w<leader>"] = "Diary",
---            ["<leader>w<leader>p"] ={"<Plug>VimwikiDiaryPrevDay", "Previous day"},
---            ["<leader>w<leader>n"] ={"<Plug>VimwikiDiaryNextDay", "Next day"},
+--        wk.add({
+--            {"<leader>w", desc = "VimWiki"},
+--            {"<leader>wt", desc = "Manage tasks"},
+--            {"<leader>wtt", desc = {"<Plug>VimwikiToggleListItem", "Toggle list item"}},
+--            {"<leader>wtr", desc = {"<Plug>VimwikiToggleRejectedListItem", "Toggle rejected item"}},
+--            {"<leader>ws", desc = "Search"},
+--            {"<leader>wss", desc = {"<Plug>VimwikiSearch", "Search the wiki"}},
+--            {"<leader>wsb", desc = {"<Plug>VimwikiBacklinks", "Search backlinks"}},
+--            {"<leader>w<leader>", desc = "Diary"},
+--            {"<leader>w<leader>p", desc ={"<Plug>VimwikiDiaryPrevDay", "Previous day"}},
+--            {"<leader>w<leader>n", desc ={"<Plug>VimwikiDiaryNextDay", "Next day"}},
 --
 --        })
 --    end

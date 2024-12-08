@@ -7,18 +7,18 @@
 --        })
 --
 --        local wk = require('which-key')
---        wk.register({
---            ["<leader>f"] = "Telekasten",
---            ["<leader>fp"] = {"<cmd>Telekasten panel<CR>", "Show panel"},
---            ["<leader>ff"] = {"<cmd>Telekasten find_notes<CR>", "Find notes"},
---            ["<leader>fs"] = {"<cmd>Telekasten search_notes<CR>", "Search notes"},
---            ["<leader>ft"] = {"<cmd>Telekasten show_tags<CR>", "Search tags"},
---            ["<leader>fn"] = {"<cmd>Telekasten new_note<CR>", "Create a new note"},
---            ["<leader>fo"] = {"<cmd>Telekasten goto_today<CR>", "Open todays daily note"},
---            ["<leader>fc"] = {"<cmd>Telekasten show_calendar<CR>", "Show the calendar"},
---            ["<leader>fb"] = {"<cmd>Telekasten show_backlinks<CR>", "Show backlinks"},
---            ["<leader>fi"] = {"<cmd>Telekasten insert_link<CR>", "Insert link"},
---            ["<leader>fg"] = {"<cmd>Telekasten follow_link<CR>", "Follow link"},
+--        wk.add({
+--            {"<leader>f", desc = "Telekasten"},
+--            {"<leader>fp", "<cmd>Telekasten panel<CR>", desc = "Show panel"}},
+--            {"<leader>ff", "<cmd>Telekasten find_notes<CR>", desc = "Find notes"}},
+--            {"<leader>fs", "<cmd>Telekasten search_notes<CR>", desc = "Search notes"}},
+--            {"<leader>ft", "<cmd>Telekasten show_tags<CR>", desc = "Search tags"},
+--            {"<leader>fn", "<cmd>Telekasten new_note<CR>", desc = "Create a new note"},
+--            {"<leader>fo", "<cmd>Telekasten goto_today<CR>", desc = "Open todays daily note"},
+--            {"<leader>fc", "<cmd>Telekasten show_calendar<CR>", desc = "Show the calendar"},
+--            {"<leader>fb", "<cmd>Telekasten show_backlinks<CR>", desc = "Show backlinks"},
+--            {"<leader>fi", "<cmd>Telekasten insert_link<CR>", desc = "Insert link"},
+--            {"<leader>fg", "<cmd>Telekasten follow_link<CR>", desc = "Follow link"},
 --        })
 --
 --        vim.api.nvim_create_autocmd({"BufEnter"}, {

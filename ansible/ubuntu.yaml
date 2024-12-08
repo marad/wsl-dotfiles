@@ -13,6 +13,10 @@
     - name: Install required apt packages
       apt:
         name:
+          - tmux
+          - xsel
+          - lua5.1
+          - luarocks
           - fzf
           - unzip
           - fontconfig
@@ -63,12 +67,24 @@
       ansible.builtin.script:
         cmd: ../scripts/install_nvim.sh
         creates: /opt/nvim-linux64
+    - name: Install node version manager
+      ansible.builtin.shell:
+        cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+        creates: ~/.nvm
+    - name: Install latest nodejs with NVM
+      ansible.builtin.shell:
+        cmd: nvm install node
+        creates: ~/.npm
+    - name: Install tldr command
+      ansible.builtin.shell:
+        cmd: npm install -g tldr
+
     - name: Install sdkman
       ansible.builtin.shell:
         cmd: curl -s "https://get.sdkman.io" | bash
         creates: ~/.sdkman 
-    - name: Install GraalVM 22
-      ansible.builtin.shell:
-        cmd: sdk install 22-graal
-        creates: ~/.sdkman/candidates/java/22-graal
+    #- name: Install GraalVM 22
+    #  ansible.builtin.shell:
+    #    cmd: sdk install 22-graal
+    #    creates: ~/.sdkman/candidates/java/22-graal
 

@@ -61,12 +61,12 @@ end
 function Notes.setup()
 
     local wk = require("which-key")
-    wk.register({
-        ["<leader>f"] = "Notes",
-        ["<leader>ff"] = {"<cmd>Telescope find_files<CR>", "Find note"},
-        ["<leader>fd"] = {Notes.open_daily_note, "Open daily note"},
-        ["<leader>fp"] = {Notes.previous_daily_note, "Open previous daily note"},
-        ["<leader>fn"] = {Notes.next_daily_note, "Open next daily note"},
+    wk.add({
+        {"<leader>f", desc = "Notes"},
+        {"<leader>ff", desc = {"<cmd>Telescope find_files<CR>", "Find note"}},
+        {"<leader>fd", desc = {Notes.open_daily_note, "Open daily note"}},
+        {"<leader>fp", desc = {Notes.previous_daily_note, "Open previous daily note"}},
+        {"<leader>fn", desc = {Notes.next_daily_note, "Open next daily note"}},
     })
 end
 

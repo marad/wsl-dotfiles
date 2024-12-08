@@ -11,13 +11,13 @@ return {
         end)
 
         local wk = require('which-key')
-        wk.register({
-            ["<leader>p"] = "Project",
-            ["<leader>pf"] = "Find files",
-            ["<leader>ps"] = "Search files",
-            ["<leader>t"] = "Telescope",
-            ["<leader>tt"] = { "<cmd>Telescope<cr>", "Main telescope UI" },
-            ["<leader>tb"] = { "<cmd>Telescope buffers<cr>", "Switch buffers"},
+        wk.add({
+            {"<leader>p", group = "Project"},
+            {"<leader>pf", group = "Find files"},
+            {"<leader>ps", group = "Search files"},
+            {"<leader>t", group = "Telescope"},
+            {"<leader>tt", "<cmd>Telescope<cr>", desc = "Main telescope UI" },
+            {"<leader>tb", "<cmd>Telescope buffers<cr>", desc = "Switch buffers"},
         })
 
         opts.defaults = {

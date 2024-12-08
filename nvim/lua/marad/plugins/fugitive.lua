@@ -4,9 +4,9 @@ return {
         vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
         local wk = require('which-key')
-        wk.register({
-            ["<leader>g"] = "Git",
-            ["<leader>gs"] = "Status",
+        wk.add({
+            { "<leader>g", desc = "Git" },
+            { "<leader>gs", desc = "Status"},
         })
     end,
 }
